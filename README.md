@@ -2,6 +2,7 @@
 A node.js script to extract novels from android novel apps using OCR and ADB
 
 Not done yet, check back later
+本程序尚未开始开发(资料夹已创建), 晚点再回来吧
 
 
 # Goal
