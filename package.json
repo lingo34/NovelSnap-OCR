@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/lingo34/NovelSnap-OCR/issues"
   },
-  "homepage": "https://github.com/lingo34/NovelSnap-OCR#readme"
+  "homepage": "https://github.com/lingo34/NovelSnap-OCR#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0",
+    "shelljs": "^0.8.5"
+  }
 }

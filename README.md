@@ -14,6 +14,7 @@ Not done yet, check back later
 
 
 # Steps
+0. adb 连接
 1. adb 截图
 2. 传输截图至电脑
 3. 删除android 手机中的截图
@@ -21,14 +22,33 @@ Not done yet, check back later
 5. 删除电脑上的截图缓存
 6. 翻页
 
+1. 获取截图
+2. ocr 储存文字
+3. 删除截图
+4. 翻页
 
+# 要求 requirements
+- adb
+- node.js
 
+# 笔记:
 
+## config.json 格式
+所有档案位置末端都不加 `/`
+举个例子, `/sdcard`是正确的, `/sdcard/`是错误的
 
+## adb 命令
+> 参考 [知乎](https://zhuanlan.zhihu.com/p/290670672)
 
+~~~ sh
+adb
 
+adb shell /system/bin/screencap -p /sdcard/cap.png
 
+adb pull /sdcard/cap.png c:\Users\Administrator\Desktop
 
+adb shell rm /sdcard/cap.png
+~~~
 
 
 

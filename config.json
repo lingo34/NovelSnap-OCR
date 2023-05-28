@@ -1,0 +1,6 @@
+{
+    "language": "zh_cn",
+    "cache_location_pc": "./cache",
+    "cache_location_android": "/sdcard"
+
+}
