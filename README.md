@@ -1,5 +1,6 @@
 # NovelSnap-OCR
 A node.js script to extract novels from android novel apps using OCR and ADB
+一个使用 OCR 和 ADB 从安卓小说应用中提取小说的 Node.js 脚本
 
 Not done yet, check back later
 本程序尚未完成开发(资料夹已创建), 晚点再回来吧
@@ -16,17 +17,11 @@ Not done yet, check back later
 
 # Steps
 0. adb 连接
-1. adb 截图
-2. 传输截图至电脑
-3. 删除android 手机中的截图
-4. ocr 提取文字
+1. 获取截图 (adb截图, 传输截图到电脑, 删除android中的截图)
+4. ocr 提取文字 并储存
 5. 删除电脑上的截图缓存
 6. 翻页
-
-1. 获取截图
-2. ocr 储存文字
-3. 删除截图
-4. 翻页
+---
 
 # 要求 requirements
 - adb
