@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/lingo34/NovelSnap-OCR#readme",
   "dependencies": {
+    "node-tesseract-ocr": "^2.2.1",
     "prompt-sync": "^4.2.0",
     "shelljs": "^0.8.5"
   }

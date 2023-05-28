@@ -2,8 +2,9 @@
 A node.js script to extract novels from android novel apps using OCR and ADB
 
 Not done yet, check back later
-本程序尚未开始开发(资料夹已创建), 晚点再回来吧
+本程序尚未完成开发(资料夹已创建), 晚点再回来吧
 
+目前状态: 因为tesseract-OCR库效果实在不太行, 正在考虑换ocr库, 但是由于支持node 的本地ocr库好像不太多, 目前正在考虑切到python去写, 但是由于我并不会写python, 所以正在考虑去学个python😂
 
 # Goal
 目标是留存互联网上因为过于先进的反爬虫机制, 导致难以获取的小说资源。
@@ -30,12 +31,16 @@ Not done yet, check back later
 # 要求 requirements
 - adb
 - node.js
+- 安装好并能正常使用的tesseract
 
 # 笔记:
 
 ## config.json 格式
 所有档案位置末端都不加 `/`
 举个例子, `/sdcard`是正确的, `/sdcard/`是错误的
+
+
+
 
 ## adb 命令
 > 参考 [知乎](https://zhuanlan.zhihu.com/p/290670672)
@@ -51,6 +56,9 @@ adb shell rm /sdcard/cap.png
 ~~~
 
 
+# 使用的库
+- [node-tesseract-ocr](https://www.npmjs.com/package/node-tesseract-ocr), MIT License
 
-
+- [prompt-sync](https://www.npmjs.com/package/prompt-sync), MIT License
+- [shelljs](https://www.npmjs.com/package/shelljs), BSD-3-Clause
 
