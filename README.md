@@ -1,11 +1,9 @@
 # NovelSnap-OCR
-A node.js script to extract novels from android novel apps using OCR and ADB
-一个使用 OCR 和 ADB 从安卓小说应用中提取小说的 Node.js 脚本
+A python script to extract novels from android novel apps using OCR and ADB
+一个使用 OCR 和 ADB 从安卓小说应用中提取小说的 python 脚本
 
 Not done yet, check back later
 本程序尚未完成开发(资料夹已创建), 晚点再回来吧
-
-目前状态: 因为tesseract-OCR库效果实在不太行, 正在考虑换ocr库, 但是由于支持node 的本地ocr库好像不太多, 目前正在考虑切到python去写, 但是由于我并不会写python, 所以正在考虑去学个python😂
 
 # Goal
 目标是留存互联网上因为过于先进的反爬虫机制, 导致难以获取的小说资源。
@@ -24,7 +22,7 @@ Not done yet, check back later
 ---
 
 # 要求 requirements
-- adb
+- python 
 - node.js
 - 安装好并能正常使用的tesseract
 
