@@ -1,6 +1,7 @@
 import os
 import ocr
 import config as configFile
+import cv2
 
 config = configFile.general_config
 
@@ -26,7 +27,7 @@ def shell(cmd):
 def main():
     print("歡迎使用python 版NovelSnap OCR")
     screenshotOCRLoop()
-
+    print("感謝使用")
 
 # ! 未完成
 # take a screenshot and do OCR
@@ -62,3 +63,10 @@ def getScreenshot(fileName="screen.png"):
     shell("adb shell rm " + config["cache_location_android"] + "/" + fileName)
     print("@dev截图完成, 图片已缓存到" + config["cache_location_pc"] + "/" + fileName)
     return config["cache_location_pc"] + "/" + fileName
+
+
+
+
+
+
+main()
