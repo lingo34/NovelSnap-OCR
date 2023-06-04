@@ -1,1 +1,1 @@
-paddleocr>=2.1.2
+cnocr

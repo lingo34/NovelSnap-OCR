@@ -1,26 +1,31 @@
 from cnocr import CnOcr
-
-# ! doing
-# def ocr(imgPath, lang="ch"):
-#    print("OCR")
-#    # Paddleocr目前支持的多语言语种可以通过修改lang参数进行切换
-#    # 例如`ch`, `en`, `fr`, `german`, `korean`, `japan`
-#    ocr = PaddleOCR(use_angle_cls=True, lang=lang)  # need to run only once to download and load model into memory
-   
-#    result = ocr.ocr(imgPath, cls=True)
-#    for index in range(len(result)):
-#        res = result[index]
-#        for line in res:
-#            print(line + "^")
-
-img_fp = './cap.png'
-ocr = CnOcr()  # 所有参数都使用默认值
-out = ocr.ocr(img_fp)
-
-print(out)
+import config
 
 
+ocr_config = config.ocr_config
 
+def ocr(imgPath) -> list:
+    """
+    OCR the image and return the text
+    Args:
+        imgPath: path of the image to be recognized
+    
+    Returns:
+        text: the text recognized from the image
+    """
+    # see CnOCR documentation https://cnocr.readthedocs.io/zh/latest/usage/#_4
+    ocr = CnOcr(
+        rec_model_name=ocr_config["rec_model_name"],
+        rec_root=ocr_config["rec_root"]
+        )
+    # see CnOCR documentation https://cnocr.readthedocs.io/zh/latest/usage/#1-cnocrocrimg_fp
+    return ocr.ocr(imgPath,
+                   resized_shape=ocr_config["resized_shape"],)
+
+
+
+
+print(ocr("./cap.png"))
 
 # ocr("./cache/screen.png")
 

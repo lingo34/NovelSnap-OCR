@@ -12,21 +12,31 @@ Not done yet, check back later
 另外有些小说网页的反爬虫机制十分先进, 愚蠢如我也只能想到adb操控手机 + ocr文字识别的笨方法了。
 
 
+# 使用:
 
-# Steps
+## 要求 requirements
+- adb
+- python, 开发版本为`3.10`
+- 安装好并能正常使用的tesseract
+
+## 安装
+~~~ sh
+pip install -r requirements.txt
+~~~
+首次运行时要下载ocr模型, 可能会比较慢
+
+
+
+
+# 笔记:
+
+## Steps
 0. adb 连接
 1. 获取截图 (adb截图, 传输截图到电脑, 删除android中的截图)
 4. ocr 提取文字 并储存
 5. 删除电脑上的截图缓存
 6. 翻页
 ---
-
-# 要求 requirements
-- python 
-- node.js
-- 安装好并能正常使用的tesseract
-
-# 笔记:
 
 ## config.json 格式
 所有档案位置末端都不加 `/`
@@ -50,8 +60,5 @@ adb shell rm /sdcard/cap.png
 
 
 # 使用的库
-- [node-tesseract-ocr](https://www.npmjs.com/package/node-tesseract-ocr), MIT License
-
-- [prompt-sync](https://www.npmjs.com/package/prompt-sync), MIT License
-- [shelljs](https://www.npmjs.com/package/shelljs), BSD-3-Clause
+- [CnOCR](https://github.com/breezedeus/cnocr), Apache-2.0 license
 

@@ -1,8 +1,26 @@
 import os
-from paddleocr import PaddleOCR
+import ocr
+import config as configFile
+
+config = configFile.general_config
 
 
+# ----- Tools ----- #
 
+
+# ! 未完成
+def writeFile(text):
+    print("@dev正在写入文件...")
+    print(text)
+
+
+#
+def shell(cmd):
+    """run shell command, print and return the output"""
+    print(os.popen(cmd).read())
+
+
+# ------------------ #
 
 
 def main():
@@ -10,33 +28,37 @@ def main():
     screenshotOCRLoop()
 
 
-
 # ! 未完成
 # take a screenshot and do OCR
-def screenshotOCRLoop():
-    imgPath = captureScreen()
-    text = ocr(imgPath)
+def screenshotOCRLoop(fileName="screen"):
+    imgPath = getScreenshot(fileName + ".png")
+    text = ocr.ocr(imgPath)
     writeFile(text)
 
 
 
 
+def getScreenshot(fileName="screen.png"):
+    ''' capture screen on phone using adb, pull it to local,
+        clean the screenshot on phone, and return the path of the screenshot.
+    Args:
+        fileName: the name of the screenshot file, default is "screen.png"
+    Returns:
+        the path of the screenshot
+    '''
 
-
-
-# ! 未完成
-def captureScreen(fileName = "screen.png"):
     print("@dev正在截图...")
-    return './cache/screen.png'
-
-# ! 未完成
-def writeFile(text):
-    print("@dev正在写入文件...")
-    print(text)
-
-def adb_shell(cmd):
-    exit_code = os.system(cmd)
-    return exit_code>>8
-    # # os.system(cmd)命令会直接把结果输出，所以在不对状态码进行分析处理的情况下，一般直接调用即可
-    # os.system(cmd)
-
+    shell("adb shell screencap -p " + config["cache_location_android"] + "/" + fileName)
+    shell(
+        "adb pull "
+        + config["cache_location_android"]
+        + "/"
+        + fileName
+        + " "
+        + config["cache_location_pc"]
+        + "/"
+        + fileName
+    )
+    shell("adb shell rm " + config["cache_location_android"] + "/" + fileName)
+    print("@dev截图完成, 图片已缓存到" + config["cache_location_pc"] + "/" + fileName)
+    return config["cache_location_pc"] + "/" + fileName
