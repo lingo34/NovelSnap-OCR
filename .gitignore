@@ -1,6 +1,8 @@
 cache
 .DS_Store
 ocr_models
+output
+
 # python git ignore
 # Byte-compiled / optimized / DLL files
 __pycache__/

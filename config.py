@@ -2,6 +2,7 @@
 
 general_config = {
     "ui_language": "zh_cn",
+    "text_output_location": "./output/",
     "cache_location_pc": "./cache",
     "cache_location_android": "/sdcard",
 }
