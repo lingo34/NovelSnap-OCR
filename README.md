@@ -4,6 +4,8 @@ A python script to extract novels from android novel apps using OCR and ADB
 
 Not done yet, check back later
 本程序尚未完成开发(资料夹已创建), 晚点再回来吧
+> ⚠️ 本程序可能不会完成开发了，因为我发现开源ocr方案的效果不太行，有点难以接受...
+> This Program may never be completed, because I find current open source ocr solutions... not that capable...
 
 # Goal
 目标是留存互联网上因为过于先进的反爬虫机制, 导致难以获取的小说资源。
